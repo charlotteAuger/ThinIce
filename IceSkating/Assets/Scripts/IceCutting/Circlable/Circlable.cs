@@ -9,6 +9,7 @@ public abstract class Circlable : MonoBehaviour
 
     public virtual void Swallowed()
     {
+        print("plouf");
         if (rB != null)
         {
             Destroy(rB);

@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         saveScript.DeleteSave();
         int levelID = saveScript.GetSavedLevel();
         currentLevel = levelList.levels[levelID];
+
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     [SerializeField] private GameObject playerPrefab;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         if (currentScore >= currentLevel.scoreGoal)
         {
             EndGame(true);
+            IncrementLevel();
         }
     }
 

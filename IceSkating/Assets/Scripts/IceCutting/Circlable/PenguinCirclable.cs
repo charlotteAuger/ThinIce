@@ -7,6 +7,7 @@ public class PenguinCirclable : Circlable
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private AIController controller;
+    [SerializeField] private Animator animator;
 
 
     public override void Swallowed()
@@ -14,7 +15,8 @@ public class PenguinCirclable : Circlable
         base.Swallowed();
 
         agent.Stop();
-        Destroy(agent);
-        Destroy(controller);
+        agent.enabled = false;
+        controller.enabled = false;
+        animator.SetBool("Dead", true);
     }
 }

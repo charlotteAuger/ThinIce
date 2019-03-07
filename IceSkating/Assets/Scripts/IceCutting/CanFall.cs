@@ -9,7 +9,7 @@ public class CanFall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hole") //Add safe window
+        if (other.gameObject.tag == "Hole") 
         {
             this.gameObject.layer = LayerMask.NameToLayer("Falling");
             Falling();

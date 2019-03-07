@@ -1,18 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PenguinDeathHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private AIController controller;
+    [SerializeField] private Rigidbody rB;
+    [SerializeField] private Animator animator;
+    //Camera script
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Hole")
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("Falling");
+            StartCoroutine(DeathCoroutine());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator DeathCoroutine()
     {
-        
+        yield return new WaitForSeconds(0.1f);
+        rB.useGravity = true;
+        rB.isKinematic = false;
+        agent.enabled = false;
+        controller.enabled = false;
+        animator.SetBool("Dead", true);
     }
 }
