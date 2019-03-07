@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level 4
   m_EditorClassIdentifier: 
   id: 4
-  scoreGoal: 200
+  scoreGoal: 100

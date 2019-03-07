@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ea69eda937ea04392d68e672f8300d, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: c9b462b27629d4345a2c29f3da302c86, type: 3}
+  m_Name: Level 23
   m_EditorClassIdentifier: 
-  speed: 7.7
-  rotationSpeed: 0.041
-  inputThreshold: 6.5
+  id: 23
+  scoreGoal: 759
