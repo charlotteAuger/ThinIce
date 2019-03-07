@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 lastMousePosition;
 
+    private void Start()
+    {
+        Cursor.visible = false;   
+    }
+
     private void Update()
     {
         GetPlayerInput();

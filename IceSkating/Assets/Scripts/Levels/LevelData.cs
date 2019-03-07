@@ -7,4 +7,6 @@ public class LevelData : ScriptableObject
 {
     public int id;
     public float scoreGoal;
+    public int nbrOfFlags;
+    public int baseNbrOfPenguins;
 }

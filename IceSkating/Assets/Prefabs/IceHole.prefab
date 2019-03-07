@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holeCollider: {fileID: 151}
-  windowTime: 0.5
+  windowTime: 0.75
 --- !u!114 &1430665457
 MonoBehaviour:
   m_ObjectHideFlags: 0
