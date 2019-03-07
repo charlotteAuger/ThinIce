@@ -462,7 +462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27700783}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 900e2fea2344bda4b8d1e5bea11b85d4, type: 3}
   m_Name: 
@@ -3644,6 +3644,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9190610054429538444, guid: c540782a79c72624aadb0adfa3a56642,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1438008968}
+    - target: {fileID: 9190610054429538444, guid: c540782a79c72624aadb0adfa3a56642,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 9190610054617926909, guid: c540782a79c72624aadb0adfa3a56642,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -6672,8 +6682,10 @@ MonoBehaviour:
   - {fileID: 858507079}
   - {fileID: 1429150083}
   - {fileID: 1031177494}
-  checkTiming: 3
+  checkTiming: 5
   on: 0
+  levelElements: []
+  holes: []
 --- !u!4 &1480922069
 Transform:
   m_ObjectHideFlags: 0
