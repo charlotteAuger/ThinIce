@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47acc804377b1f046a0817dc97fa7319, type: 3}
   m_Name: SoundReferences
   m_EditorClassIdentifier: 
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 40ea971333e0f7f46b4f167161eff863, type: 3}
   iceSkating: {fileID: 0}
   playerDeath: {fileID: 0}
   gainPoint: {fileID: 0}
   startGame: {fileID: 0}
   gameOver: {fileID: 0}
   plouf: {fileID: 0}
-  iceCracking: {fileID: 0}
+  iceCracking: {fileID: 8300000, guid: 22ad3b4d02bcdd44f87198f00519dd21, type: 3}
   trailLengthUp: {fileID: 0}
   penguinCry: {fileID: 0}

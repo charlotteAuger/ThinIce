@@ -18,9 +18,13 @@ public class SoundManager : MonoBehaviour {
             Destroy(this.gameObject);
     }
 
-	public void SetMusic()
+    private void Start()
+    {
+        SetMusic();
+    }
+
+    public void SetMusic()
 	{
-		
 		musicSource.clip = clips.gameMusic;
 		musicSource.Play();
 	}
