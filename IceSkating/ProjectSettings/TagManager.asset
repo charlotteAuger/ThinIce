@@ -7,6 +7,7 @@ TagManager:
   - Hole
   - TrailNode
   - Circlable
+  - TutoCircle
   layers:
   - Default
   - TransparentFX

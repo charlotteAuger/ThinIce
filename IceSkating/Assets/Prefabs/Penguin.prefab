@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cd8334d7c87274e8b58d2372afd8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsValue: 1
+  pointsValue: 35
   rB: {fileID: 8731877664116696921}
   agent: {fileID: 12522492}
   controller: {fileID: 7184211546219152142}

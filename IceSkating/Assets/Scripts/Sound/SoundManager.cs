@@ -18,10 +18,6 @@ public class SoundManager : MonoBehaviour {
             Destroy(this.gameObject);
     }
 
-    private void Start()
-    {
-        SetMusic();
-    }
 
     public void SetMusic()
 	{

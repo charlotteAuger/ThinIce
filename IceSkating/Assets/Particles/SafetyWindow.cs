@@ -20,6 +20,11 @@ public class SafetyWindow : MonoBehaviour
             Poolable p = other.gameObject.GetComponent<Poolable>();
             PoolManager.instance.DestroyObject(p);
         }
+
+        if (other.tag == "Circle")
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     public void StartWindow()

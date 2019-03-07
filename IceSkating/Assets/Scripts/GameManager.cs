@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) { Destroy(gameObject); }
 
         saveScript = new SaveScript();
-        saveScript.DeleteSave();
+        //saveScript.DeleteSave();
         int levelID = saveScript.GetSavedLevel();
-        currentLevel = levelList.levels[levelID];
+        currentLevel = levelList.levels[levelID-1];
 
         Screen.orientation = ScreenOrientation.Portrait;
     }
@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
         trail = player.GetComponentInChildren<IceCuttingTrail>();
         cameraScript.SetTarget(player);
 
+        currentScore = 0;
+
         UIManager.Instance.InitializeInGameUI(currentLevel.id);
         UIManager.Instance.SetMainMenuVisibility(false);
         UIManager.Instance.HideTransitionUI();
@@ -60,19 +62,26 @@ public class GameManager : MonoBehaviour
     {
         if (currentScore >= currentLevel.scoreGoal)
         {
-            EndGame(true);
-            IncrementLevel();
+            StartCoroutine(EndGame(true));
+           
         }
     }
 
-    public void EndGame(bool playerWins)
+    public IEnumerator EndGame(bool playerWins)
     {
         IceSkatingMovement movementScript = player.GetComponent<IceSkatingMovement>();
         movementScript.StopMovement();
 
+        yield return new WaitForSeconds(0.5f);
+
         UIManager.Instance.SetTransitionUI(playerWins);
         LevelGenerator.instance.on = false;
         Destroy(player);
+
+        if (playerWins)
+        {
+             IncrementLevel();
+        }
     }
 
     public void IncrementLevel()

@@ -18,7 +18,10 @@ public class AIController : MonoBehaviour
 
     private void Start()
     {
-        InitMovement();
+        if (gameObject.activeInHierarchy)
+        {
+            InitMovement();
+        }
     }
 
     public void InitMovement()

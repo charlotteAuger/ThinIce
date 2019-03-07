@@ -30,6 +30,6 @@ public class PlayerDeathHandler : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        GameManager.Instance.EndGame(false);
+        StartCoroutine(GameManager.Instance.EndGame(false));
     }
 }

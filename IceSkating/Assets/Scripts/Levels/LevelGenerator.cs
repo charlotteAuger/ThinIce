@@ -8,8 +8,10 @@ public class LevelGenerator : MonoBehaviour
     public static LevelGenerator instance = null;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private Transform[] closestSpawnPoints;
+    private GameObject[] circles;
     public float checkTiming;
     public bool on;
+    public GameObject circlePrefab;
 
     void Awake()
     {
@@ -42,6 +44,11 @@ public class LevelGenerator : MonoBehaviour
             tempSpawnList = spawnPoints.ToList<Transform>();
         }
 
+        if (data.id == 1)
+        {
+            circles = new GameObject[data.nbrOfFlags];
+        }
+
         for (int i = 0; i < data.nbrOfFlags; i++)
         {
             int r = Random.Range(0, tempSpawnList.Count);
@@ -52,6 +59,11 @@ public class LevelGenerator : MonoBehaviour
 
             tempSpawnList.RemoveAt(r);
             CheckList(ref tempSpawnList);
+
+            if (data.id == 1)
+            {
+                circles[i] = Instantiate(circlePrefab, spawnPosition, Quaternion.identity);
+            }
         }
 
         for (int i = 0; i < data.baseNbrOfPenguins; i++)
@@ -138,6 +150,14 @@ public class LevelGenerator : MonoBehaviour
             PoolManager.instance.DestroyObject(holes[0]);
         }
 
-        //levelElements.Clear();
+        if (circles != null)
+        {
+            foreach (GameObject circle in circles)
+            {
+                Destroy(circle);
+            }
+            circles = null;
+        }
+
     }
 }

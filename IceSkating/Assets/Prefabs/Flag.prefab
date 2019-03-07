@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed4eb90488775142a8cfb12b653af0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsValue: 30
+  pointsValue: 15
   rB: {fileID: 4658480775805451343}
   trailIncrementValue: 0.25
 --- !u!114 &1182957192318773964

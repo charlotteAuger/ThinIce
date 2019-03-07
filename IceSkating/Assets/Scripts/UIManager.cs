@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     [Header("Transition")]
     [SerializeField] private GameObject transitionScreenCanvas;
     [SerializeField] private TextMeshProUGUI victoryText;
+    [SerializeField] private TextMeshProUGUI wdText;
 
 
     public void InitializeInGameUI(int _currentLevel)
@@ -57,10 +58,12 @@ public class UIManager : MonoBehaviour
         if (victory)
         {
             victoryText.text = "Tap to continue !";
+            wdText.gameObject.SetActive(true);
         }
         else
         {
             victoryText.text = "Tap to retry !";
+            wdText.gameObject.SetActive(false);
         }
 
         transitionScreenCanvas.SetActive(true);
