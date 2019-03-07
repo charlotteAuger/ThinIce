@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 6147924662654416140}
-  inputThreshold: 0.2
+  stats: {fileID: 11400000, guid: 5a550e3f8b975544c98b6a9eb30fff60, type: 2}
 --- !u!114 &6147924662654416140
 MonoBehaviour:
   m_ObjectHideFlags: 0

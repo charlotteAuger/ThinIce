@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private IceSkatingMovement movementScript;
-    [SerializeField] private float inputThreshold;
+    [SerializeField] private CharacterStats stats;
 
     private void Update()
     {
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 dp = Input.GetTouch(0).deltaPosition;
 
-            if (dp.magnitude > inputThreshold)
+            if (dp.magnitude > stats.inputThreshold)
             {
                 movementScript.SetTargetRotation(dp);
             }

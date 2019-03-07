@@ -7,4 +7,5 @@ public class CharacterStats : ScriptableObject
 {
     public float speed;
     public float rotationSpeed;
+    public float inputThreshold;
 }
