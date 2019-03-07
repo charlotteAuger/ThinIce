@@ -20,4 +20,9 @@ public class SaveScript : MonoBehaviour
 
         return level;
     }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteKey("Level");
+    }
 }

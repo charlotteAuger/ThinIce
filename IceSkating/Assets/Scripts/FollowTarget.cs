@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    public GameObject target;
-    public Vector3 offset;
+    [SerializeField] private GameObject target;
+    [SerializeField] private Vector3 offset;
 
     private void FixedUpdate()
     {
+        if (target == null) return; 
+
         transform.position = target.transform.position + offset;
+    }
+
+    public void SetTarget(GameObject _target)
+    {
+        target = _target;
+    }
+
+    public void StopFollowingTarget()
+    {
+        target = null;
     }
 }

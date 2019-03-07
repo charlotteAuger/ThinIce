@@ -104,7 +104,7 @@ public class IceCuttingTrail : MonoBehaviour
         float scaletoRadius = radius * 2 / holeRatio;
 
         GameObject newHole = Instantiate(holePrefab, spawnPosition, Quaternion.identity);
-        newHole.transform.localScale = new Vector3(scaletoRadius, 1f, scaletoRadius);
+        newHole.transform.localScale = new Vector3(scaletoRadius, scaletoRadius, scaletoRadius);
     }
 
     private void IncrementTrail(float amount)

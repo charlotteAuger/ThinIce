@@ -23,14 +23,19 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) { Destroy(gameObject); }
 
         saveScript = new SaveScript();
+        saveScript.DeleteSave();
         int levelID = saveScript.GetSavedLevel();
-        currentLevel = levelList.levels[levelID];        
+        currentLevel = levelList.levels[levelID];
     }
-
-   
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform playerSpawn;
+    [SerializeField] private FollowTarget cameraScript;
+
+    public void Start()
+    {
+        StartGame();
+    }
 
     public void GainPoints(float amount)
     {
@@ -43,6 +48,8 @@ public class GameManager : MonoBehaviour
     {
         player = Instantiate(playerPrefab, playerSpawn.position, Quaternion.identity);
         trail = player.GetComponentInChildren<IceCuttingTrail>();
+        UIManager.Instance.InitializeInGameUI(currentLevel.id);
+        cameraScript.SetTarget(player);
     }
 
     private void CheckVictory()
