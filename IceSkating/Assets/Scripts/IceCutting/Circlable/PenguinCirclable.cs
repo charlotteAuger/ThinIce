@@ -14,8 +14,6 @@ public class PenguinCirclable : Circlable
     {
         base.Swallowed();
 
-        print("penguin ploof");
-
         agent.Stop();
         agent.enabled = false;
         controller.enabled = false;

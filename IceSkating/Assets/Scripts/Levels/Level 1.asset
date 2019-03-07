@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   id: 1
-  scoreGoal: 100
+  scoreGoal: 1000
+  nbrOfFlags: 1
+  baseNbrOfPenguins: 1

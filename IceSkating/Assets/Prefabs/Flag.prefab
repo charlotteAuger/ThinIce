@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4658480775805451343}
   - component: {fileID: 7836220021202321149}
   - component: {fileID: 1182957192318773964}
+  - component: {fileID: 7702625301027077934}
   m_Layer: 0
   m_Name: Flag
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4658480775805451442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0, z: 0.107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9039051234387524388}
@@ -93,6 +94,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAvailable: 1
   c: {fileID: 4658480775805451443}
+--- !u!135 &7702625301027077934
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658480775805451442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &9039051234387911076
 PrefabInstance:
   m_ObjectHideFlags: 0

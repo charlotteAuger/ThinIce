@@ -66,7 +66,7 @@ public class IceCuttingTrail : MonoBehaviour
 
     private void DetectCircle(int lastNodeIndex)
     {
-        print(lastNodeIndex);
+
         int circleSize = lastNodeIndex+1;
         GameObject[] circleNodes = new GameObject[circleSize];
 
@@ -103,9 +103,8 @@ public class IceCuttingTrail : MonoBehaviour
         spawnPosition = new Vector3(spawnPosition.x, 0f, spawnPosition.z);
         float scaletoRadius = radius * 2 / holeRatio;
 
-        //GameObject newHole = Instantiate(holePrefab, spawnPosition, Quaternion.identity);
         Vector3 scale = new Vector3(scaletoRadius, scaletoRadius, scaletoRadius);
-        PoolManager.instance.CreateObject(Poolables.Hole, spawnPosition, scale);
+        LevelGenerator.instance.AddElementHole(PoolManager.instance.CreateObject(Poolables.Hole, spawnPosition, scale));
     }
 
     private void IncrementTrail(float amount)

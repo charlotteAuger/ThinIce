@@ -26,4 +26,10 @@ public class HolePool : Poolable
         yield return null;
         animator.SetTrigger("Reset");
     }
+
+    public override void Disable()
+    {
+        base.Disable();
+        LevelGenerator.instance.RemoveElement(this);
+    }
 }

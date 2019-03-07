@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 
     private SaveScript saveScript;
 
-    private float currentScore;
-    private LevelData currentLevel;
+    public float currentScore;
+    public LevelData currentLevel;
     [SerializeField] private LevelList levelList;
-    private GameObject player;
+    public GameObject player;
     private IceCuttingTrail trail;
 
     public delegate void PowerUpEvent(float amount);
@@ -46,10 +46,14 @@ public class GameManager : MonoBehaviour
     {
         player = Instantiate(playerPrefab, playerSpawn.position, Quaternion.identity);
         trail = player.GetComponentInChildren<IceCuttingTrail>();
-        UIManager.Instance.InitializeInGameUI(currentLevel.id);
         cameraScript.SetTarget(player);
+
+        UIManager.Instance.InitializeInGameUI(currentLevel.id);
         UIManager.Instance.SetMainMenuVisibility(false);
         UIManager.Instance.HideTransitionUI();
+
+        LevelGenerator.instance.on = true;
+        StartCoroutine(LoadLevel());
     }
 
     private void CheckVictory()
@@ -66,7 +70,8 @@ public class GameManager : MonoBehaviour
         IceSkatingMovement movementScript = player.GetComponent<IceSkatingMovement>();
         movementScript.StopMovement();
 
-        UIManager.Instance.SetTransitionUI(true);
+        UIManager.Instance.SetTransitionUI(playerWins);
+        LevelGenerator.instance.on = false;
         Destroy(player);
     }
 
@@ -74,11 +79,14 @@ public class GameManager : MonoBehaviour
     {
         int newLevelID = Mathf.Min(currentLevel.id + 1, levelList.levels.Length);
         saveScript.SaveLevel(newLevelID);
-        currentLevel = levelList.levels[newLevelID];
+        currentLevel = levelList.levels[newLevelID-1];
     }
 
-    public void LoadLevel()
+    IEnumerator LoadLevel()
     {
-
+        LevelGenerator.instance.ClearLevel();
+        yield return null;
+        LevelGenerator.instance.GenerateLevel(currentLevel);
     }
+
 }

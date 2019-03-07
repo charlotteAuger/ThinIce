@@ -15,14 +15,13 @@ public class SwallowCirclable : MonoBehaviour
             other.transform.parent = transform;
             other.enabled = false;
             swallowedObjects.Add(other.GetComponentInParent<Poolable>());
-            print("Swallowing");
             c.Swallowed();
         }
     }
 
     public void DestroyElement()
     {
-        print("destroy");
+
         foreach (Poolable p in swallowedObjects)
         {
             p.transform.parent = null;

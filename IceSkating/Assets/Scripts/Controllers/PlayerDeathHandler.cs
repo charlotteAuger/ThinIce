@@ -29,8 +29,7 @@ public class PlayerDeathHandler : MonoBehaviour
         GameManager.Instance.cameraScript.StopFollowingTarget();
 
         yield return new WaitForSeconds(1f);
-   
-        UIManager.Instance.SetTransitionUI(false);
-        Destroy(gameObject);
+
+        GameManager.Instance.EndGame(false);
     }
 }
