@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private IceSkatingMovement movementScript;
     [SerializeField] private CharacterStats stats;
 
+    private Vector3 lastMousePosition;
+
     private void Update()
     {
         GetPlayerInput();
@@ -24,5 +26,18 @@ public class PlayerController : MonoBehaviour
                 movementScript.SetTargetRotation(dp);
             }
         }
+
+        if (Input.GetMouseButton(0) && lastMousePosition != null)
+        {
+            Vector3 dp = Input.mousePosition - lastMousePosition;
+            Vector2 v = new Vector2(dp.x, dp.y);
+
+            if (v.magnitude > stats.inputThreshold)
+            {
+                movementScript.SetTargetRotation(v);
+            }
+        }
+
+        lastMousePosition = Input.mousePosition;
     }
 }
