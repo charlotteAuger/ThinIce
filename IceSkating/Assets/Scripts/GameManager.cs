@@ -30,12 +30,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform playerSpawn;
-    [SerializeField] private FollowTarget cameraScript;
+    public FollowTarget cameraScript;
 
-    public void Start()
-    {
-        StartGame();
-    }
 
     public void GainPoints(float amount)
     {
@@ -50,6 +46,8 @@ public class GameManager : MonoBehaviour
         trail = player.GetComponentInChildren<IceCuttingTrail>();
         UIManager.Instance.InitializeInGameUI(currentLevel.id);
         cameraScript.SetTarget(player);
+        UIManager.Instance.SetMainMenuVisibility(false);
+        UIManager.Instance.HideTransitionUI();
     }
 
     private void CheckVictory()
@@ -62,7 +60,11 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(bool playerWins)
     {
-        //Deactivate player input and movement
+        IceSkatingMovement movementScript = player.GetComponent<IceSkatingMovement>();
+        movementScript.StopMovement();
+
+        UIManager.Instance.SetTransitionUI(true);
+        Destroy(player);
     }
 
     public void IncrementLevel()

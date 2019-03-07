@@ -19,8 +19,18 @@ public class PlayerDeathHandler : MonoBehaviour
 
     private void Death()
     {
+        StartCoroutine(DeathCoroutine());
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
         movementScript.StopMovement();
         iceCuttingTrail.SetActive(false);
-        //Stop camera follow
+        GameManager.Instance.cameraScript.StopFollowingTarget();
+
+        yield return new WaitForSeconds(1f);
+   
+        UIManager.Instance.SetTransitionUI(false);
+        Destroy(gameObject);
     }
 }
