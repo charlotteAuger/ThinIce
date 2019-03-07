@@ -14,24 +14,31 @@ public class LevelGenerator : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    private List<GameObject> levelElements;
+    private List<Poolable> levelElements = new List<Poolable>();
 
     public void GenerateLevel(LevelData data)
     {
         //Generation
     }
 
-    public void AddElement(GameObject element)
+    public void AddElement(Poolable element)
     {
         levelElements.Add(element);
     }
 
+    public void RemoveElement(Poolable element)
+    {
+        if (levelElements.Contains(element))
+        {
+            levelElements.Remove(element);
+        }
+    }
+
     public void ClearLevel()
     {
-        levelElements.RemoveAll(item => item == null);
-        foreach (GameObject element in levelElements)
+        foreach (Poolable element in levelElements)
         {
-            Destroy(element);
+            PoolManager.instance.DestroyObject(element);
         }
         levelElements.Clear();
     }

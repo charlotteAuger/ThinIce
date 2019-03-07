@@ -8,6 +8,7 @@ public class IceSkatingMovement : MonoBehaviour
     private Quaternion currentRotation;
     private Quaternion targetRotation;
     [SerializeField] private CharacterStats stats;
+    [SerializeField] private Animator animator;
     private bool moving;
 
     private void Start()
@@ -19,6 +20,7 @@ public class IceSkatingMovement : MonoBehaviour
     public void StopMovement()
     {
         rB.velocity = Vector3.zero;
+        animator.SetBool("Dead", true);
         moving = false;
     }
 

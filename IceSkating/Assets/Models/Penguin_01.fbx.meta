@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8a23448daf62d7d4ca8eaff8536f2931
+guid: dd2fcfd67ee7e694f92636e0d34c41eb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -66,8 +66,6 @@ ModelImporter:
     400058: PRT_CTR_Leg_R
     400060: PRT_CTR_Neck
     2100000: lambert1
-    2100002: lambert4
-    2100004: lambert3
     4300000: Penguin_01_Geo
     7400000: Walking
     9500000: //RootNode
@@ -152,7 +150,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.02
+    previousCalculatedGlobalScale: 0.03
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

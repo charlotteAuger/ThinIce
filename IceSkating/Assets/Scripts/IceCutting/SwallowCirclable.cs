@@ -4,21 +4,34 @@ using UnityEngine;
 
 public class SwallowCirclable : MonoBehaviour
 {
+    private List<Poolable> swallowedObjects = new List<Poolable>();
+
     private void OnTriggerEnter(Collider other)
     {
         Circlable c = other.gameObject.GetComponent<Circlable>();
         if (c != null)
         {
+            other.transform.parent = null;
             other.transform.parent = transform;
             other.enabled = false;
-
+            swallowedObjects.Add(other.GetComponentInParent<Poolable>());
+            print("Swallowing");
             c.Swallowed();
         }
     }
 
     public void DestroyElement()
     {
-        Destroy(gameObject);
+        print("destroy");
+        foreach (Poolable p in swallowedObjects)
+        {
+            p.transform.parent = null;
+            p.Disable();
+        }
+
+        swallowedObjects.Clear();
+
+        gameObject.SetActive(false);
     }
 }
        

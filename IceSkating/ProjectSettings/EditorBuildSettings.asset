@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/IceCuttingTest.unity
     guid: 5f66c0ae946c57c4f9d85e47b133057c
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: fa130e63e67a18c418f797d38c0a84a1
   m_configObjects: {}

@@ -9,6 +9,7 @@ public class PenguinDeathHandler : MonoBehaviour
     [SerializeField] private AIController controller;
     [SerializeField] private Rigidbody rB;
     [SerializeField] private Animator animator;
+    [SerializeField] private Poolable p;
     //Camera script
 
     private void OnTriggerEnter(Collider other)
@@ -28,5 +29,9 @@ public class PenguinDeathHandler : MonoBehaviour
         agent.enabled = false;
         controller.enabled = false;
         animator.SetBool("Dead", true);
+
+        yield return new WaitForSeconds(1f);
+        p.Disable();
+        
     }
 }

@@ -18,11 +18,17 @@ public class AIController : MonoBehaviour
 
     private void Start()
     {
+        InitMovement();
+    }
+
+    public void InitMovement()
+    {
         StartCoroutine(SetRandomDestination());
     }
 
     private IEnumerator SetRandomDestination()
     {
+        yield return null;
         bool correct = false;
 
         Vector2 randomPoint;

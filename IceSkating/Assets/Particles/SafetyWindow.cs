@@ -7,9 +7,15 @@ public class SafetyWindow : MonoBehaviour
     [SerializeField] private Collider holeCollider;
     [SerializeField] private float windowTime;
 
-    private void Start()
+    public void Start()
+    {
+        StartWindow();
+    }
+
+    public void StartWindow()
     {
         Invoke("ActivateCollider", windowTime);
+        holeCollider.enabled = false;
     }
 
     private void ActivateCollider()

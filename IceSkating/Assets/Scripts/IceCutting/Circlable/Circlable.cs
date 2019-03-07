@@ -9,11 +9,10 @@ public abstract class Circlable : MonoBehaviour
 
     public virtual void Swallowed()
     {
-        print("plouf");
-        if (rB != null)
+        /*if (rB != null)
         {
-            Destroy(rB);
-        }
+            rB.isKinematic = true;
+        }*/
 
         GameManager.Instance.GainPoints(pointsValue);
     }
