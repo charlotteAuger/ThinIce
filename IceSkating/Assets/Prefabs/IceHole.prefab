@@ -157,6 +157,8 @@ MonoBehaviour:
   iceBlock: {fileID: 70}
   animator: {fileID: 147}
   safety: {fileID: 165}
+  rend: {fileID: 141}
+  depthMask: {fileID: 140}
 --- !u!1 &72
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   scoreGoal: 185
-  nbrOfFlags: 7
-  baseNbrOfPenguins: 6
+  nbrOfFlags: 5
+  baseNbrOfPenguins: 7

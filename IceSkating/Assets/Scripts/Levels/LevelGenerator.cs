@@ -81,7 +81,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void AddPenguins()
     {
-        if (levelElements.Count >= 3 || GameManager.Instance.currentScore >= GameManager.Instance.currentLevel.scoreGoal) { return; }
+        if (levelElements.Count >= 4 || GameManager.Instance.currentScore >= GameManager.Instance.currentLevel.scoreGoal) { return; }
 
         Transform spawnPoint = spawnPoints[0];
 

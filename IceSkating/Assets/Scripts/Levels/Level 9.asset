@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 9
   scoreGoal: 175
   nbrOfFlags: 5
-  baseNbrOfPenguins: 7
+  baseNbrOfPenguins: 6
