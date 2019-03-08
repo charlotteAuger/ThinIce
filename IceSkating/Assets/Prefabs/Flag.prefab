@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsValue: 15
   rB: {fileID: 4658480775805451343}
-  trailIncrementValue: 0.25
+  trailIncrementValue: 0.1
 --- !u!114 &1182957192318773964
 MonoBehaviour:
   m_ObjectHideFlags: 0
