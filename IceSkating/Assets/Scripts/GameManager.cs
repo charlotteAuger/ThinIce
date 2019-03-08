@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameAnalyticsSDK;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         currentLevel = levelList.levels[levelID-1];
 
         Screen.orientation = ScreenOrientation.Portrait;
+        GameAnalytics.Initialize();
     }
 
     [SerializeField] private GameObject playerPrefab;
