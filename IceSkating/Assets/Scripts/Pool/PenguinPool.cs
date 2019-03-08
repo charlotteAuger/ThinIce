@@ -19,8 +19,9 @@ public class PenguinPool : Poolable
         rB.isKinematic = true;
         animator.SetBool("Dead", false);
         controller.enabled = true;
-        controller.InitMovement();
         agent.enabled = true;
+        controller.InitMovement();
+        
     }
 
     public override void Disable()
