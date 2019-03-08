@@ -11,7 +11,7 @@ public class SaveScript : MonoBehaviour
 
     public int GetSavedLevel()
     {
-        int level = 0;
+        int level = 1;
 
         if (PlayerPrefs.HasKey("Level"))
         {
