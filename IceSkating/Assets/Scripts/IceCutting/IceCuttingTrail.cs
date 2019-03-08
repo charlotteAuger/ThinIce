@@ -12,6 +12,7 @@ public class IceCuttingTrail : MonoBehaviour
     public TrailRenderer trailRenderer;
     public float holeRatio;
     public GameObject holePrefab;
+    public ParticleSystem sparkles;
 
     private void Start()
     {
@@ -111,5 +112,7 @@ public class IceCuttingTrail : MonoBehaviour
     {
         trailTime += amount;
         trailRenderer.time = trailTime;
+        sparkles.Play();
+        
     }
 }

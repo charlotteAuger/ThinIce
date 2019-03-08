@@ -49,4 +49,6 @@ public class IceSkatingMovement : MonoBehaviour
         currentRotation = Quaternion.Slerp(currentRotation, targetRotation, stats.rotationSpeed);
         transform.rotation = currentRotation;
     }
+
+   
 }
